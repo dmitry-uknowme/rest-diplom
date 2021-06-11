@@ -1,0 +1,225 @@
+/* Specification */
+body {
+	font-family: 'Sintony', sans-serif;
+	color: #5c6369;
+}
+
+ul,
+li {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700px;
+	color: #14141d;
+}
+
+p {
+	line-height: 1.8em;
+}
+
+.yellow {
+	color: #fea100;
+}
+/* Navigation */
+
+.main_header {
+	padding: 23px 0;
+}
+
+.menu {
+	margin-top: 10px;
+}
+
+.menu_item {
+	margin-left: 50px;
+	font-weight: 700px;
+	font-size: 14px;
+}
+
+.menu_item a {
+	color: #2c465a;
+	text-transform: uppercase;
+}
+
+.cta {
+	background: #fea100;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 3px;
+	font-weight: 700;
+	padding: 15px 0;
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	border: 0;
+	margin-top: -5px;
+	text-align: center;
+}
+
+.cta:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.book_icon {
+	background: url('../img/order.png');
+	width: 21px;
+	height: 17px;
+	display: block;
+	margin-right: 13px;
+}
+/* The first display */
+
+.offer {
+	background: url('../img/first-bg.jpg') no-repeat center;
+}
+
+.title {
+	padding: 220px 0;
+}
+
+.title_heading {
+	font-size: 56px;
+	color: #fff;
+}
+
+.title_intro {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700px;
+	font-size: 40px;
+	color: #fff;
+	margin-top: -15px;
+}
+
+.title_intro span {
+	color: #fea100;
+}
+
+/* Call display */
+
+.call {
+	background: #edf1f3;
+	border-bottom: 1px solid #dde3e7;
+	padding: 30px 0;
+}
+
+.phone {
+}
+
+.phone_text {
+	background: url('../img/phone.png') no-repeat left center;
+	font-size: 14px;
+	color: #14141d;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 180px;
+	padding-left: 56px;
+}
+
+.phone_text span {
+	font-size: 16px;
+	margin-top: -4px;
+	display: block;
+}
+
+.phone_digits {
+	font-size: 32px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	color: #14141d;
+	margin-left: 42px;
+	margin-top: ;
+}
+
+/* About display */
+.about {
+	padding: 65px 0 100px;
+}
+
+.history {
+	margin-top: 60px;
+}
+
+.history_title {
+	font-size: 35px;
+}
+
+.history_text {
+	font-size: 14px;
+}
+
+.history_button {
+	width: 148;
+	margin-top: 48px;
+}
+
+.food-images {
+}
+
+.food-images_item {
+	margin-bottom: 10px;
+}
+
+.food-images-down {
+	margin-top: 50px;
+}
+
+.special {
+	background: url('../img/third-bg.jpg') no-repeat center top;
+	padding: 80px;
+}
+
+.special_title {
+	font-size: 35px;
+	color: #fff;
+	text-align: center;
+}
+
+.total__list-item {
+	margin-top: 50px;
+}
+
+.total__list-item-ingridient {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.total__list-item-ingridient span {
+	margin-left: 20px;
+	font-size: 20px;
+	color: red;
+	padding: 5px;
+	/* border: 1px solid rgba(255, 0, 0, 0.5); */
+}
+
+.total__list-item-ingridient:hover span {
+	border: 1px solid rgba(255, 0, 0, 0.5);
+}
+.total__list-item-ingridient-add span {
+	pointer-events: none;
+	font-size: 30px;
+	color: lime;
+	background: lightgreen;
+	width: fit-content;
+	padding: 0 15px;
+	border-radius: 50px;
+}
+
+
+.dish {
+	background: url('../img/bg.jpg');
+}
+
+.count {
+	background: wheat;
+}
