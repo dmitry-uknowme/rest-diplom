@@ -21,12 +21,13 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
         <div class="container">
             <div class="main_header">
                 <div class="row">
-                        <div class="col-lg-3">
+                    <div class="col-lg-3">
                         Выполнил: студент группы ПО-41
-                        <br/>
+                        <br />
                         Дмитрий Валиев
+
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <nav>
                             <ul class="menu d-flex justify-content-center">
                                 <li class="menu_item">
@@ -34,29 +35,40 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
                                 </li>
                                 <li class="menu_item">
                                     <a href="./menu.php">Меню</a>
-                                </li> <li class="menu_item">
+                                </li>
+                                <li class="menu_item">
                                     <a href="./menu.php#rest">Ресторанные блюда</a>
-                                </li> <li class="menu_item">
+                                </li>
+                                <li class="menu_item">
                                     <a href="./menu.php#common">Блюда общепита</a>
                                 </li>
+
                             </ul>
+
                         </nav>
                     </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
                     <form name="search" method="post" action="./search.php">
-                        <input class="form-control" type="search" name="query" placeholder="Поиск">
-                        <button class="btn btn-primary" type="submit">Найти</button> 
+                        <input class="form-control" type="search" name="query" placeholder="Поиск" style="display: inline;width: 200px;">
+                        <button class="btn btn-primary" type="submit">Найти</button>
                     </form>
                 </div>
             </div>
+        </div>
     </header>
     <main class="main">
         <div class="container">
-             <h1 id="rest" style="font-family: Calibri; font-size: 40px; font-weight: 900; text-align: center;">Ресторанные блюда </h1>
+            <h1 id="rest" style="font-family: Calibri; font-size: 40px; font-weight: 900; text-align: center;">Ресторанные блюда </h1>
             <div class="row">
-        
-                <?php while ($res = mysqli_fetch_assoc($rest_dishes)) { ?>
 
-                    <?php $row = preg_split("/[\/\-]/", $res["dish_ingridients"]); ?>
+                <?php while ($res = mysqli_fetch_assoc($rest_dishes)) { ?>
+                    <?php $ingridients = json_decode($res['ingridients'], true) ?>
                     <div class="col-lg-4 my-5">
                         <div class="container bg-warning" style="color: blue;height: 260px !important; border-radius: 20px; padding-top: 15px; border: 4px solid orange; box-shadow: #333 10px 20px 0">
                             <div class="row">
@@ -65,12 +77,11 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
                                 </div>
                                 <div class="col-lg-7" style="max-height: 100px;">
                                     <text style="font-size: 12px; max-height: 100px !important">
-                                        <?php echo '<ul style="height: 100px; word-wrap:break-word">'; ?>
-                                        <?php foreach ($row as $r) {
-
-                                            echo '<li>' . $r . ' </li>';
+                                        <?php echo '<ul style="height: 100px; word-wrap:break-word">';
+                                        foreach ($ingridients as $ingridient) {
+                                            echo ('<li>' . $ingridient['name'] . ' - ' . $ingridient['weight'] . ' г ' . '</li>');
                                         }
-                                        echo '</ul>';
+                                        echo ('</ul>')
                                         ?>
                                     </text>
                                 </div>
@@ -88,15 +99,15 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
                         </div>
                     </div>
                 <?php } ?>
-               
+
             </div>
         </div>
         <div class="container">
-              <h1 id="common" style="font-family: Calibri; font-size: 40px; font-weight: 900; text-align: center;">Блюда общепита  </h1>
+            <h1 id="common" style="font-family: Calibri; font-size: 40px; font-weight: 900; text-align: center;">Блюда общепита </h1>
             <div class="row">
-               
-                                <?php while ($res = mysqli_fetch_assoc($common_dishes)) { ?>
-                    <?php $row = preg_split("/[\/\-]/", $res["dish_ingridients"]); ?>
+
+                <?php while ($res = mysqli_fetch_assoc($common_dishes)) { ?>
+                    <?php $ingridients = json_decode($res['ingridients'], true) ?>
                     <div class="col-lg-4 my-5">
                         <div class="container bg-warning" style="color: blue;height: 260px !important; border-radius: 20px; padding-top: 15px; border: 4px solid orange; box-shadow: #333 10px 20px 0">
                             <div class="row">
@@ -105,12 +116,11 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
                                 </div>
                                 <div class="col-lg-7" style="max-height: 100px;">
                                     <text style="font-size: 12px; max-height: 100px !important">
-                                        <?php echo '<ul style="height: 100px; word-wrap:break-word">'; ?>
-                                        <?php foreach ($row as $r) {
-
-                                            echo '<li>' . $r . ' </li>';
+                                        <?php echo '<ul style="height: 100px; word-wrap:break-word">';
+                                        foreach ($ingridients as $ingridient) {
+                                            echo ('<li>' . $ingridient['name'] . ' - ' . $ingridient['weight'] . ' г ' . '</li>');
                                         }
-                                        echo '</ul>';
+                                        echo ('</ul>')
                                         ?>
                                     </text>
                                 </div>
