@@ -70,29 +70,26 @@ $common_dishes = mysqli_query($connection, "SELECT * FROM dishes WHERE dish_type
                 <?php while ($res = mysqli_fetch_assoc($rest_dishes)) { ?>
                     <?php $ingridients = json_decode($res['ingridients'], true) ?>
                     <div class="col-lg-4 my-5">
-                        <div class="container bg-warning" style="color: blue;height: 260px !important; border-radius: 20px; padding-top: 15px; border: 4px solid orange; box-shadow: #333 10px 20px 0">
+                        <div class="container bg-warning" style="color: blue;height:auto; border-radius: 20px; padding-top: 15px; border: 4px solid orange; box-shadow: #333 10px 20px 0">
                             <div class="row">
                                 <div class="col-lg-5">
                                     <img src="<?php echo $res['dish_img'] ?>" class="w-100" alt="">
                                 </div>
-                                <div class="col-lg-7" style="max-height: 100px;">
-                                    <text style="font-size: 12px; max-height: 100px !important">
-                                        <?php echo '<ul style="height: 100px; word-wrap:break-word">';
+                                <div class="col-lg-7">
+                                    <text style="font-size: 12px">
+                                        <?php echo '<ul>';
                                         foreach ($ingridients as $ingridient) {
                                             echo ('<li>' . $ingridient['name'] . ' - ' . $ingridient['weight'] . ' г ' . '</li>');
                                         }
-                                        echo ('</ul>')
-                                        ?>
+                                        echo ('</ul>'); ?>
                                     </text>
                                 </div>
-                            </div>
-                            <div class="row my-2 d-flex flex-column">
                                 <div class="col-lg-6" style="color: red">
-                                    <!-- <?php echo $res['dish_price'] ?> -->
                                     <a class="btn btn-outline-success buy" href="./dish.php?id=<?php echo ($res['dish_id']) ?>">Перейти</a>
-                                    <!-- <button class="btn btn-outline-success buy" data-name=" <?php echo $res['dish_name'] ?>" data-price="<?php echo $res['dish_price'] ?>" data-ingridients="<?php echo $res['dish_ingridients'] ?>">Заказать</button> -->
                                 </div>
-                                <div class="col-lg-6" style="color: indigo">
+                            </div>
+                            <div class=" row my-2 d-flex flex-column">
+                                <div class="col-lg-12" style="color: indigo">
                                     <?php echo $res['dish_name'] ?>
                                 </div>
                             </div>

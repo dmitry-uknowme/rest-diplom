@@ -27,7 +27,7 @@ $max_dishes = 6
     <?php $ingridients = json_decode($res['ingridients'], true) ?>
     <div class="container">
         <div class="row">
-            <div class="col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: -200px;">
+            <div class="col-lg-2" style="display: flex; justify-content: center; align-items: center;">
                 <?php if ($dish_id > 1) { ?>
                     <a class="btn btn-primary" href="./dish.php?id=<?php echo ($dish_id - 1) ?>">Предыдущее блюдо</a>
                 <?php } ?>
@@ -40,14 +40,15 @@ $max_dishes = 6
                         </div>
                         <div class="col-lg-4">
                             <text style="font-size: 15px;">
-                                <?php echo '<ul class="ingridient-list" style="height: 100px; word-wrap:break-word">';
+                                <?php echo '<ul class="ingridient-list" style="height: auto; word-wrap:break-word">';
                                 foreach ($ingridients as $ingridient) { ?>
                                     <li class="ingridient-item" data-name="<?php echo ($ingridient['name']) ?>" data-weight="<?php echo ($ingridient['weight']) ?>" data-price="<?php echo ($ingridient['price']) ?>">
-                                        <?php echo ($ingridient['name'] . ' - ' . '<span>' . $ingridient['weight'] . '</span' . ' г ') ?>
+                                        <?php echo ($ingridient['name'] . ' - ' . '<span>' . $ingridient['weight'] . '</span>' . ' г ') ?>
                                     </li>
                                 <?php }
                                 echo ('</ul>')
                                 ?>
+
                             </text>
 
 
@@ -84,7 +85,7 @@ $max_dishes = 6
                     <h2 class="text-center">На главную</h2>
                 </a>
             </div>
-            <div class="col-lg-3" style="display: flex;
+            <div class="col-lg-2" style="display: flex;
     justify-content: center;
     align-items: center;
    ">

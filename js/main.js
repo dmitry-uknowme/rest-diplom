@@ -7,7 +7,7 @@ const ingridientTotalPrice = document.querySelector('.ingridient-price-total');
 
 inputCount.oninput = (e) => {
 	const value = parseInt(e.target.value);
-	countNumber.innerHTML = value;
+	countNumber.innerText = value;
 	Array.from(ingridientItems).map((ingridient) => {
 		const weight = parseInt(ingridient.dataset['weight']);
 		ingridient.children[0].innerText = weight * value;

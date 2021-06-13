@@ -1,5 +1,6 @@
 /* Specification */
 body {
+	min-height: 100vh;
 	font-family: 'Sintony', sans-serif;
 	color: #5c6369;
 }
@@ -214,7 +215,6 @@ p {
 	padding: 0 15px;
 	border-radius: 50px;
 }
-
 
 .dish {
 	background: url('../img/bg.jpg');
